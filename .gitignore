@@ -1,3 +1,5 @@
 .idea/
 .venv/
 */out.txt
+*/target/
+*/.idea/
