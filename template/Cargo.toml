@@ -1,0 +1,8 @@
+[package]
+name = "aos_yyyy_dd"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+postgres = "0.19.9"
+itertools = "0.13.0"
