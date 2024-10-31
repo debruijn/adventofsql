@@ -1,5 +1,6 @@
 import psycopg
 
+
 def get_content(file="main.sql"):
     file = open(file, "r")
     file_content = file.read()
@@ -12,8 +13,7 @@ def main(day_str='00'):
 
     with psycopg.connect("postgresql://postgres:localpass@localhost:5432/adventofsql") as conn:
         with conn.cursor() as cur:
-
-            # Prepare input
+            # Prepare input - make sure to download this from the Advent of SQL website for each day
             content = get_content(file=f'2024/{day_str}/advent_of_sql_day_{day_int}.sql')
             cur.execute(content)
 
