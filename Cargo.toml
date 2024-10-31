@@ -1,5 +1,5 @@
 [package]
-name = "aos_yyyy_dd"
+name = "adventofsql"
 version = "0.1.0"
 edition = "2021"
 
