@@ -12,12 +12,8 @@ clear_day:
 	rm -r ${YEAR}/${DAY}/
 
 create_day: create_day_folder
-	cp -r template/src/* ${YEAR}/${DAY}/src/
-	cp template/Cargo.lock ${YEAR}/${DAY}/
-	cp template/Cargo.toml ${YEAR}/${DAY}/
 	cp template/main.sql ${YEAR}/${DAY}/
 	cp template/Makefile ${YEAR}/${DAY}/
-	sed -i 's/yyyy_dd/${YEAR}_${DAY}/g' ${YEAR}/${DAY}/Cargo.toml
 
 create_aos_db:
 	createdb adventofsql
