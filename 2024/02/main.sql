@@ -7,7 +7,8 @@
 -- c Concatenate somehow
 
 
--- a Parent table with letters_a and letters_b as children
+-- a Parent table with letters_a and letters_b as children (and drop it if I have ran this before)
+DROP TABLE IF EXISTS letters CASCADE;
 CREATE TABLE letters( LIKE letters_a );
 ALTER TABLE letters_a INHERIT letters;
 ALTER TABLE letters_b INHERIT letters;
