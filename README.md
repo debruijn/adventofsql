@@ -24,3 +24,7 @@ The Python and Rust implementations will only print the results of the last stat
 earlier statements will be setup statements, of one of the following types:
 - Showing step by step how to get to the final query (like in the example challenge)
 - Generating a temporary table to make the final query easier/faster
+
+## Keeping track of skills used per challenge according to the creator:
+1. JSON - Case - Joins
+2. UNION - CTE (Common Table Expressions) - ASCII - String agg
