@@ -31,12 +31,17 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
         let mut res: String = String::new();
 
         if ind == n_cmd - 1 {
-            let col_name = binding.get(0).unwrap().columns().get(0).unwrap().name();
+            let col_names = binding.get(0).unwrap().columns();
             for x in binding.iter() {
-                if res.len() > 0 {
-                    res.push_str(", ")
+                res.push_str("\n");
+                for col in col_names {
+                    match col.type_() {
+                        &postgres::types::Type::INT4 => res.push_str(x.try_get::<&str, i32>(col.name()).unwrap().to_string().as_str()),
+                        _ => res.push_str(x.try_get::<&str, &str>(col.name()).unwrap_or_else(|_x| "None"))};
+                    if col.name() != col_names.last().unwrap().name() {
+                        res.push_str(",");
+                    }
                 }
-                res.push_str(x.try_get::<&str, &str>(col_name).unwrap())
             }
             println!("Answer {}: {}", day_str, res);
         }
@@ -45,7 +50,7 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
 }
 
 fn main() {
-    let run_for = vec!["00"];
+    let run_for = vec!["02"];
     for day_str in run_for.iter() {
         run(day_str).expect("Filenames should exist");
     }
