@@ -1,4 +1,4 @@
-DAY=00
+DAY=01
 YEAR=2024
 
 create_year_folder:
@@ -6,7 +6,6 @@ create_year_folder:
 
 create_day_folder:
 	mkdir ${YEAR}/${DAY}
-	mkdir ${YEAR}/${DAY}/src
 
 clear_day:
 	rm -r ${YEAR}/${DAY}/

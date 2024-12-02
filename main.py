@@ -8,7 +8,7 @@ def get_content(file="main.sql"):
     return file_content
 
 
-def main(day_str='00'):
+def main(day_str='01'):
     day_int = int(day_str)
 
     with psycopg.connect("postgresql://postgres:localpass@localhost:5432/adventofsql") as conn:
@@ -23,9 +23,9 @@ def main(day_str='00'):
                 cur.execute(x + ';')
 
             # Print answer based on final query
-            print(f'Answer {day_str}: ' + ", ".join(x[0] for x in cur))
+            print(f'Answer {day_str}: \n' + "\n".join(",".join(str(y) for y in x) for x in cur))
 
 
 if __name__ == "__main__":
-    for day in ['00']:
+    for day in ['01']:
         main(day)
