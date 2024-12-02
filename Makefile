@@ -1,4 +1,4 @@
-DAY=01
+DAY=02
 YEAR=2024
 
 create_year_folder:
@@ -12,7 +12,6 @@ clear_day:
 
 create_day: create_day_folder
 	cp template/main.sql ${YEAR}/${DAY}/
-	cp template/Makefile ${YEAR}/${DAY}/
 
 create_aos_db:
 	createdb adventofsql
