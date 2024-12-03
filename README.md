@@ -27,4 +27,7 @@ earlier statements will be setup statements, of one of the following types:
 
 ## Keeping track of skills used per challenge according to the creator:
 1. JSON - Case - Joins
-2. UNION - CTE (Common Table Expressions) - ASCII - String agg
+2. _UNION_ - CTE (Common Table Expressions) - ASCII - String agg
+3. CTE - XML
+
+(Items in italics I have worked around by using another approach.)

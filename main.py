@@ -27,5 +27,5 @@ def main(day_str='01'):
 
 
 if __name__ == "__main__":
-    for day in ['02']:
+    for day in ['03']:
         main(day)
