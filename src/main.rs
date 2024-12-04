@@ -50,7 +50,7 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
 }
 
 fn main() {
-    let run_for = vec!["03"];
+    let run_for = vec!["04"];
     for day_str in run_for.iter() {
         run(day_str).expect("Filenames should exist");
     }

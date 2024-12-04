@@ -29,5 +29,7 @@ earlier statements will be setup statements, of one of the following types:
 1. JSON - Case - Joins
 2. _UNION_ - CTE (Common Table Expressions) - ASCII - String agg
 3. CTE - XML
+4. Array functions - SET operations
+
 
 (Items in italics I have worked around by using another approach.)
