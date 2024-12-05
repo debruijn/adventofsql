@@ -4,5 +4,6 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-postgres = "0.19.9"
+postgres = { version = "0.19.9", features = ["with-chrono-0_4"] }
 itertools = "0.13.0"
+chrono = "0.4.38"

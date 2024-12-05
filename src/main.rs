@@ -37,6 +37,10 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
                 for col in col_names {
                     match col.type_() {
                         &postgres::types::Type::INT4 => res.push_str(x.try_get::<&str, i32>(col.name()).unwrap().to_string().as_str()),
+                        &postgres::types::Type::DATE => {
+                            let v: Option<chrono::NaiveDate> = x.get(col.name());
+                            res.push_str(v.unwrap().to_string().as_str())
+                        },
                         _ => res.push_str(x.try_get::<&str, &str>(col.name()).unwrap_or_else(|_x| "None"))};
                     if col.name() != col_names.last().unwrap().name() {
                         res.push_str(",");
@@ -50,7 +54,7 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
 }
 
 fn main() {
-    let run_for = vec!["04"];
+    let run_for = vec!["05"];
     for day_str in run_for.iter() {
         run(day_str).expect("Filenames should exist");
     }
