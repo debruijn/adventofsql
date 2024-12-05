@@ -30,6 +30,6 @@ earlier statements will be setup statements, of one of the following types:
 2. _UNION_ - CTE (Common Table Expressions) - ASCII - String agg
 3. CTE - XML
 4. Array functions - SET operations
-
+5. LAG - ROUND - Window functions
 
 (Items in italics I have worked around by using another approach.)
