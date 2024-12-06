@@ -4,4 +4,5 @@
 */target/
 */.idea/
 */*/advent_of_sql_day_*.sql
+*/*/example_*.sql
 target
