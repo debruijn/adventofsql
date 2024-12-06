@@ -1,4 +1,4 @@
-DAY=05
+DAY=06
 YEAR=2024
 
 create_year_folder:
