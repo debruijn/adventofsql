@@ -32,6 +32,6 @@ earlier statements will be setup statements, of one of the following types:
 4. Array functions - SET operations
 5. LAG - ROUND - Window functions
 6. Subquery - Aggregates
-
+7. CTE - window_function
 
 (Items in italics I have worked around by using another approach.)
