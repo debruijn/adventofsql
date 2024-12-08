@@ -33,5 +33,6 @@ earlier statements will be setup statements, of one of the following types:
 5. LAG - ROUND - Window functions
 6. Subquery - Aggregates
 7. CTE - window_function
+8. recursive_cte
 
 (Items in italics I have worked around by using another approach.)
