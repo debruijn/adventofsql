@@ -37,16 +37,30 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
                 res.push_str("\n");
                 for col in col_names {
                     match col.type_() {
-                        &postgres::types::Type::INT4 => res.push_str(x.try_get::<&str, i32>(col.name()).unwrap().to_string().as_str()),
-                        &postgres::types::Type::NUMERIC => res.push_str(x.try_get::<&str, Decimal>(col.name()).unwrap().to_string().as_str()),
+                        &postgres::types::Type::INT4 => res.push_str(
+                            x.try_get::<&str, i32>(col.name())
+                                .unwrap()
+                                .to_string()
+                                .as_str(),
+                        ),
+                        &postgres::types::Type::NUMERIC => res.push_str(
+                            x.try_get::<&str, Decimal>(col.name())
+                                .unwrap()
+                                .to_string()
+                                .as_str(),
+                        ),
                         &postgres::types::Type::DATE => {
                             let v: Option<chrono::NaiveDate> = x.get(col.name());
                             res.push_str(v.unwrap().to_string().as_str())
-                        },
-                        _ => res.push_str(&*(x.try_get::<&str, &str>(col.name()).unwrap_or_else(|_x| "None")))};
-                        // y => res.push_str(&*(x.try_get::<&str, &str>(col.name()).unwrap_or_else(|_x| "None").to_owned() + format!("({:?})", y).as_str()))};
+                        }
+                        _ => res.push_str(
+                            &*(x.try_get::<&str, &str>(col.name())
+                                .unwrap_or_else(|_x| "None")),
+                        ),
+                    };
+                    // y => res.push_str(&*(x.try_get::<&str, &str>(col.name()).unwrap_or_else(|_x| "None").to_owned() + format!("({:?})", y).as_str()))};
 
-                if col.name() != col_names.last().unwrap().name() {
+                    if col.name() != col_names.last().unwrap().name() {
                         res.push_str(",");
                     }
                 }
