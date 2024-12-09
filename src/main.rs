@@ -11,6 +11,16 @@ pub fn read_input<'a>(filename: String) -> String {
     contents
 }
 
+pub fn read_makefile<'a>() -> String {
+    let file_path = "Makefile";
+    let binding = fs::read_to_string(&file_path)
+        .expect(&format!("File {} does not exist but it should!", file_path));
+    let contents = binding
+        .trim().split_once('\n').unwrap();
+    contents.0.replace("DAY=", "").to_string()
+}
+
+
 fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
     let mut client = Client::connect(
         "postgresql://postgres:localpass@localhost:5432/adventofsql",
@@ -65,14 +75,14 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
                     }
                 }
             }
-            println!("Answer {}: {}", day_str, res);
+            println!("Answer {}: {}\n", day_str, res);
         }
     }
     Ok(())
 }
 
 fn main() {
-    let run_for = vec!["09"];
+    let run_for = vec![read_makefile()];
     for day_str in run_for.iter() {
         run(day_str).expect("Filenames should exist");
     }
