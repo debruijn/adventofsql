@@ -5,5 +5,5 @@ edition = "2021"
 
 [dependencies]
 postgres = { version = "0.19.9", features = ["with-chrono-0_4"] }
-itertools = "0.13.0"
+rust_decimal = { version = "1.36.0", features = ["db-postgres"]}
 chrono = "0.4.38"

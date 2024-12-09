@@ -34,5 +34,6 @@ earlier statements will be setup statements, of one of the following types:
 6. Subquery - Aggregates
 7. CTE - window_function
 8. recursive_cte
+9. CTE - Aggregate functions
 
 (Items in italics I have worked around by using another approach.)
