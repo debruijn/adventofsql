@@ -1,4 +1,4 @@
-DAY=10
+DAY=11
 YEAR=2024
 
 create_year_folder:
@@ -24,3 +24,11 @@ activate_venv:  # Use as utility in other makefile commands - by itself, it's us
 
 install_psycopg: activate_venv
 	.venv/bin/pip3 install psycopg[binary]
+
+run_py:
+	.venv/bin/python3 main.py
+
+run_rs:
+	cargo run
+
+run_both: run_py run_rs

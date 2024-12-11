@@ -36,5 +36,7 @@ earlier statements will be setup statements, of one of the following types:
 8. recursive_cte
 9. CTE - Aggregate functions
 10. PIVOT - CTE
+11. Average over - Window functions
+
 
 (Items in italics I have worked around by using another approach.)
