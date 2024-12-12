@@ -53,6 +53,12 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
                                 .to_string()
                                 .as_str(),
                         ),
+                        &postgres::types::Type::FLOAT8 => res.push_str(
+                            x.try_get::<&str, f64>(col.name())
+                                .unwrap()
+                                .to_string()
+                                .as_str(),
+                        ),
                         &postgres::types::Type::NUMERIC => res.push_str(
                             x.try_get::<&str, Decimal>(col.name())
                                 .unwrap()
