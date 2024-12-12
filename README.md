@@ -37,6 +37,7 @@ earlier statements will be setup statements, of one of the following types:
 9. CTE - Aggregate functions
 10. PIVOT - CTE
 11. Average over - Window functions
+12. percentile - window functions
 
 
 (Items in italics I have worked around by using another approach.)
