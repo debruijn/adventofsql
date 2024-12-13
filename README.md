@@ -38,6 +38,6 @@ earlier statements will be setup statements, of one of the following types:
 10. PIVOT - CTE
 11. Average over - Window functions
 12. percentile - window functions
-
+13. Window functions - _Temporary tables_ - Array agg
 
 (Items in italics I have worked around by using another approach.)
