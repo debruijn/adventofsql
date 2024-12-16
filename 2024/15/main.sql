@@ -17,15 +17,15 @@ LIMIT 1;
 
 -- How to check if point is in polygon - I handpicked to use Berlins first coordinate
 SELECT place_name
-from areas
-where ST_Intersects(areas.polygon, ST_Point(13.304644, 52.454563, 4326));
+FROM areas
+WHERE ST_Intersects(areas.polygon, ST_Point(13.304644, 52.454563, 4326));
 
 
 -- Combine to get answer
 SELECT place_name
-from areas,
+FROM areas,
      (SELECT coordinate
       FROM sleigh_locations
       ORDER BY timestamp DESC
       LIMIT 1) as location
-where ST_Intersects(areas.polygon, location.coordinate);
+WHERE ST_Intersects(areas.polygon, location.coordinate);
