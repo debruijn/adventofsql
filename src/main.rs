@@ -15,11 +15,9 @@ pub fn read_makefile<'a>() -> String {
     let file_path = "Makefile";
     let binding = fs::read_to_string(&file_path)
         .expect(&format!("File {} does not exist but it should!", file_path));
-    let contents = binding
-        .trim().split_once('\n').unwrap();
+    let contents = binding.trim().split_once('\n').unwrap();
     contents.0.replace("DAY=", "").to_string()
 }
-
 
 fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
     let mut client = Client::connect(
@@ -69,13 +67,17 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
                             let v: Option<chrono::NaiveDate> = x.get(col.name());
                             res.push_str(v.unwrap().to_string().as_str())
                         }
+                        &postgres::types::Type::TIME => {
+                            let v: Option<chrono::NaiveTime> = x.get(col.name());
+                            res.push_str(v.unwrap().to_string().as_str())
+                        }
                         _ => res.push_str(
-                            &*(x.try_get::<&str, &str>(col.name())
-                                .unwrap_or_else(|_x| "None")),
+                            &*(x.try_get::<&str, &str>(col.name()).unwrap_or_else(|_x| {
+                                println!("Not yet implemented PostgreSQL type: {:?}", col.type_());
+                                "None"
+                            })),
                         ),
                     };
-                    // y => res.push_str(&*(x.try_get::<&str, &str>(col.name()).unwrap_or_else(|_x| "None").to_owned() + format!("({:?})", y).as_str()))};
-
                     if col.name() != col_names.last().unwrap().name() {
                         res.push_str(",");
                     }
