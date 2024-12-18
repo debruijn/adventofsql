@@ -22,7 +22,7 @@ WITH RECURSIVE staff_structure AS (SELECT staff_id,
                                           staff_name,
                                           2 as staff_level_counter
                                    FROM staff
-                                   WHERE staff_id = 2
+                                   WHERE staff_id = 1
                                    UNION
                                    SELECT clone.staff_id,
                                           clone.manager_id,

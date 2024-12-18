@@ -43,5 +43,7 @@ earlier statements will be setup statements, of one of the following types:
 15. Geometry (PostGIS)
 16. LAG - Geometry - Lead - CTE
 17. CTE - Timezone
+18. Recursive CTE - Aggregates
+
 
 (Items in italics I have worked around by using another approach.)
