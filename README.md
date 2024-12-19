@@ -44,6 +44,7 @@ earlier statements will be setup statements, of one of the following types:
 16. LAG - Geometry - Lead - CTE
 17. CTE - Timezone
 18. Recursive CTE - Aggregates
+19. CROSS JOIN - SUM - ROUND
 
 
 (Items in italics I have worked around by using another approach.)
