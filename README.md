@@ -45,6 +45,7 @@ earlier statements will be setup statements, of one of the following types:
 17. CTE - Timezone
 18. Recursive CTE - Aggregates
 19. CROSS JOIN - SUM - ROUND
+20. _JSON_ - CTE - _JSON_OBJECT_AGG_
 
 
 (Items in italics I have worked around by using another approach.)
