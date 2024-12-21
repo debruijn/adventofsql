@@ -31,7 +31,7 @@ LIMIT 1;
 -- And again the same problem happens as in some other days.. the problem is not as stated:
 -- "Submit the url with the most query params (including the utm-source)" means "Submit the url with the most unique
 -- query param keys (ignoring value) as long one is the given utm_source=advent-of-sql"
--- So replace array_length() with something that fines uniques. I could refactor the WHERE statement but meh.
+-- So replace array_length() with something that finds uniques. I could refactor the WHERE statement but meh.
 
 SELECT url
 FROM (SELECT url,
