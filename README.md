@@ -46,6 +46,7 @@ earlier statements will be setup statements, of one of the following types:
 18. Recursive CTE - Aggregates
 19. CROSS JOIN - SUM - ROUND
 20. _JSON_ - CTE - _JSON_OBJECT_AGG_
+21. extract - LAG - CTE
 
 
 (Items in italics I have worked around by using another approach.)
