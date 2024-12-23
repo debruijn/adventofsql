@@ -71,6 +71,14 @@ fn run(day_str: &str) -> Result<(), Box<dyn std::error::Error>> {
                             let v: Option<chrono::NaiveTime> = x.get(col.name());
                             res.push_str(v.unwrap().to_string().as_str())
                         }
+                        &postgres::types::Type::INT4_ARRAY => res.push_str(
+                            x.try_get::<&str, Vec<i32>>(col.name())
+                                .unwrap()
+                                .iter().map(|x| format!("{}", x))
+                                .collect::<Vec<String>>()
+                                .join(",")
+                                .as_str(),
+                        ),
                         _ => res.push_str(
                             &*(x.try_get::<&str, &str>(col.name()).unwrap_or_else(|_x| {
                                 println!("Not yet implemented PostgreSQL type: {:?}", col.type_());
