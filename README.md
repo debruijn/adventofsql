@@ -48,7 +48,8 @@ earlier statements will be setup statements, of one of the following types:
 20. _JSON_ - CTE - _JSON_OBJECT_AGG_
 21. extract - LAG - CTE
 22. _SPLIT_ - _CROSS JOIN_
-23. CTE, LEAD, Island problem
+23. CTE - LEAD - Island problem
+24. CTE - count
 
 
 (Items in italics I have worked around by using another approach.)
